@@ -1,8 +1,11 @@
 import "./style.css";
-// import { AppLayout } from "./layout/app.js";
+import { routes } from "./routes";
+import { Router } from "./ts/router";
 
-// new AppLayout([]).render();
-document.querySelector<HTMLDivElement>("#app")!.outerHTML = /* html */ `
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>`;
+document.addEventListener("DOMContentLoaded", () => {
+  const router = new Router();
+
+  router.addRoutes(routes);
+
+  router.navigate();
+});
